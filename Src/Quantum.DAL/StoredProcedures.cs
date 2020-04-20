@@ -5,9 +5,28 @@ namespace Quantum.DAL.StoredProcedures
 {
     namespace Sets
     {
-        internal class SPCreateSet : StoredProcedure
+        internal class SPCreateWordSet : StoredProcedure
         {
             [InParameter] public string SetName;
+        }
+
+        internal class SPDeleteWordSet : StoredProcedure
+        {
+            [InParameter] public int Id;
+        }
+
+        internal class SPGetSetById : StoredProcedure
+        {
+            [InParameter] public int Id;
+        }
+
+        internal class SPGetSets : StoredProcedure
+        {
+        }
+
+        internal class SPUpdateSet : StoredProcedure
+        {
+            [InParameter] public int Id;
         }
     }
 }

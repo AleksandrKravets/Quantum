@@ -15,13 +15,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{183EBFB6-F871-46BF-B6D9-FFEEDD3756C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quantum.API", "Src\Quantum.API\Quantum.API.csproj", "{A21CCE77-A304-4737-9FE4-164BAC27C792}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quantum.API", "Src\Quantum.API\Quantum.API.csproj", "{A21CCE77-A304-4737-9FE4-164BAC27C792}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quantum.DAL", "Src\Quantum.DAL\Quantum.DAL.csproj", "{F2DDF987-6116-4CCB-A81C-D7BBDAF73773}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quantum.DAL", "Src\Quantum.DAL\Quantum.DAL.csproj", "{F2DDF987-6116-4CCB-A81C-D7BBDAF73773}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quantum.Application", "Src\Quantum.Application\Quantum.Application.csproj", "{4B1B2E22-E4B5-4835-A0BB-2A9461E01EE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quantum.Application", "Src\Quantum.Application\Quantum.Application.csproj", "{4B1B2E22-E4B5-4835-A0BB-2A9461E01EE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quantum.Domain", "Src\Quantum.Domain\Quantum.Domain.csproj", "{D6FEE68A-3B0C-48BD-B401-11141ADE6C88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quantum.Domain", "Src\Quantum.Domain\Quantum.Domain.csproj", "{D6FEE68A-3B0C-48BD-B401-11141ADE6C88}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{E1910538-5EDC-4AA9-AC86-C4DFAB72184F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quantum.Common", "Src\Quantum.Common\Quantum.Common.csproj", "{970F4D39-A77D-4647-A6DF-F7D25DD30716}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,10 @@ Global
 		{D6FEE68A-3B0C-48BD-B401-11141ADE6C88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6FEE68A-3B0C-48BD-B401-11141ADE6C88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6FEE68A-3B0C-48BD-B401-11141ADE6C88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{970F4D39-A77D-4647-A6DF-F7D25DD30716}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{970F4D39-A77D-4647-A6DF-F7D25DD30716}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{970F4D39-A77D-4647-A6DF-F7D25DD30716}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{970F4D39-A77D-4647-A6DF-F7D25DD30716}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +65,8 @@ Global
 		{F2DDF987-6116-4CCB-A81C-D7BBDAF73773} = {AB710CEA-F0B0-47FB-8BD3-9303900CB65F}
 		{4B1B2E22-E4B5-4835-A0BB-2A9461E01EE8} = {B884B022-D6AB-4AC8-A7C4-F061F86907B4}
 		{D6FEE68A-3B0C-48BD-B401-11141ADE6C88} = {B884B022-D6AB-4AC8-A7C4-F061F86907B4}
+		{E1910538-5EDC-4AA9-AC86-C4DFAB72184F} = {F7FBEBB6-7C9C-4F8B-AFCE-969F4798085E}
+		{970F4D39-A77D-4647-A6DF-F7D25DD30716} = {E1910538-5EDC-4AA9-AC86-C4DFAB72184F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {078681B4-D601-46DC-98CE-748DE8D186FF}

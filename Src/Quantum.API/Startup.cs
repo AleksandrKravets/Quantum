@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Quantum.Application;
+using Quantum.DAL;
 
 namespace Quantum.API
 {
@@ -16,6 +18,10 @@ namespace Quantum.API
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddApplication();
+            services.AddInfrastructure();
+            services.AddApi(Configuration);
+
             services.AddControllers();
         }
 

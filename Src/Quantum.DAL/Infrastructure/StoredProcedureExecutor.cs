@@ -1,4 +1,5 @@
-﻿using Quantum.DAL.Infrastructure.Commands;
+﻿using Microsoft.Extensions.Options;
+using Quantum.DAL.Infrastructure.Commands;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -8,12 +9,12 @@ namespace Quantum.DAL.Infrastructure
     {
         private readonly string _connectionString;
 
-        public StoredProcedureExecutor(string connectionString)
+        public StoredProcedureExecutor(IOptions<DatabaseSettings> settings)
         {
-            _connectionString = connectionString;
+            _connectionString = settings.Value.ConnectionString;
         }
 
-        public Task<List<TResponse>> ExecuteWithListResponseAsync<TResponse>(StoredProcedure storedProcedure) where TResponse : class
+        public Task<ICollection<TResponse>> ExecuteWithListResponseAsync<TResponse>(StoredProcedure storedProcedure) where TResponse : class
         {
             return new ExecuteWithListResponseCommand<TResponse>(storedProcedure, _connectionString).ExecuteAsync();
         }
@@ -23,7 +24,7 @@ namespace Quantum.DAL.Infrastructure
             return new ExecuteWithObjectResponseCommand<TResponse>(storedProcedure, _connectionString).ExecuteAsync();
         }
 
-        public Task<int> ExecuteWithReturnValueResponseAsync(StoredProcedure storedProcedure)
+        public Task<int> ExecuteAsync(StoredProcedure storedProcedure)
         {
             return new ExecuteWithReturnValueCommand(storedProcedure, _connectionString).ExecuteAsync();
         }

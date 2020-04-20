@@ -10,7 +10,7 @@ namespace Quantum.DAL.Infrastructure.Commands
         {
         }
 
-        public async Task<List<TResult>> ExecuteAsync()
+        public async Task<ICollection<TResult>> ExecuteAsync()
         {
             await PreExecution();
             List<TResult> result = await ExecuteProcedureAsync();
