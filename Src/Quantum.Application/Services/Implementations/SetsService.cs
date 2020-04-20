@@ -2,6 +2,7 @@
 using Quantum.Application.DataTransferObjects.Sets;
 using Quantum.Application.Services.Contracts;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Quantum.Application.Services.Implementations
@@ -18,6 +19,26 @@ namespace Quantum.Application.Services.Implementations
         public Task CreateAsync(CreateSetModel model)
         {
             return _setsRepository.CreateAsync(model);
+        }
+
+        public Task DeleteAsync(int id)
+        {
+            return _setsRepository.DeleteAsync(id);
+        }
+
+        public Task<CardSetModel> GetAsync(int id)
+        {
+            return _setsRepository.GetAsync(id);
+        }
+
+        public Task<ICollection<CardSetModel>> GetAsync()
+        {
+            return _setsRepository.GetAsync();
+        }
+
+        public Task UpdateAsync(int id, UpdateSetModel model)
+        {
+            return _setsRepository.UpdateAsync(id, model);
         }
     }
 }

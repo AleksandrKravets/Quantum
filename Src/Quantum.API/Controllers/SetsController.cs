@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Quantum.API.Controllers
 {
     /// <summary>
-    /// Controller to work with word sets.
+    /// Controller to work with card sets.
     /// </summary>
     [Route("api/sets")]
     public class SetsController : Controller
@@ -26,10 +26,11 @@ namespace Quantum.API.Controllers
         }
 
         /// <summary>
-        /// Creates word set.
+        /// Creates card set.
         /// </summary>
-        /// <param name="model">Word set model.</param>
+        /// <param name="model">Card set model.</param>
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpPost]
         [Validation]
         public async Task<IActionResult> CreateSet([FromBody]CreateSetModel model)
@@ -39,9 +40,9 @@ namespace Quantum.API.Controllers
         }
 
         /// <summary>
-        /// Deletes word set.
+        /// Deletes card set.
         /// </summary>
-        /// <param name="id">Word set identifier.</param>
+        /// <param name="id">Card set identifier.</param>
         [ProducesResponseType(StatusCodes.Status200OK)]
         [Route("{id}")]
         [HttpDelete]
@@ -52,11 +53,12 @@ namespace Quantum.API.Controllers
         }
 
         /// <summary>
-        /// Updates word set.
+        /// Updates card set.
         /// </summary>
-        /// <param name="id">Word set identifier.</param>
-        /// <param name="model">Word set model to update.</param>
+        /// <param name="id">Card set identifier.</param>
+        /// <param name="model">Card set model to update.</param>
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [Route("{id}")]
         [HttpPut]
         [Validation]
@@ -67,9 +69,9 @@ namespace Quantum.API.Controllers
         }
 
         /// <summary>
-        /// Returns word sets list.
+        /// Returns card sets list.
         /// </summary>
-        /// <returns>The collection of <see cref="WordSetModel"></see>.</returns>
+        /// <returns>The collection of <see cref="CardSetModel"></see>.</returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
         [HttpGet]
         public async Task<IActionResult> GetSets()
@@ -79,10 +81,10 @@ namespace Quantum.API.Controllers
         }
 
         /// <summary>
-        /// Returns word set.
+        /// Returns card set.
         /// </summary>
-        /// <param name="id">Word set identifier.</param>
-        /// <returns>The instance of <see cref="WordSetModel"></see>.</returns>
+        /// <param name="id">Card set identifier.</param>
+        /// <returns>The instance of <see cref="CardSetModel"></see>.</returns>
         [ProducesResponseType(StatusCodes.Status200OK)]
         [Route("{id}")]
         [HttpGet]

@@ -24,7 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Quantum.Common\Quantum.Common.csproj" />
     <ProjectReference Include="..\Quantum.Application\Quantum.Application.csproj" />
     <ProjectReference Include="..\Quantum.DAL\Quantum.DAL.csproj" />
     <ProjectReference Include="..\Quantum.Domain\Quantum.Domain.csproj" />

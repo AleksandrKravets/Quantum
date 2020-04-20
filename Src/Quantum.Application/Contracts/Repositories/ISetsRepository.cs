@@ -9,7 +9,7 @@ namespace Quantum.Application.Contracts.Repositories
         Task CreateAsync(CreateSetModel model);
         Task DeleteAsync(int id);
         Task UpdateAsync(int id, UpdateSetModel model);
-        Task<WordSetModel> GetAsync(int id);
-        Task<ICollection<WordSetModel>> GetAsync();
+        Task<CardSetModel> GetAsync(int id);
+        Task<ICollection<CardSetModel>> GetAsync();
     }
 }

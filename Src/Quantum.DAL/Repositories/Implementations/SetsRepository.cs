@@ -19,38 +19,39 @@ namespace Quantum.DAL.Repositories.Implementations
 
         public Task CreateAsync(CreateSetModel model)
         {
-            return _procedureExecutor.ExecuteAsync(new SPCreateWordSet 
+            return _procedureExecutor.ExecuteAsync(new SPCreateCardSet 
             { 
-                SetName = model.Name 
+                Name = model.Name 
             });
         }
 
         public Task DeleteAsync(int id)
         {
-            return _procedureExecutor.ExecuteAsync(new SPDeleteWordSet
+            return _procedureExecutor.ExecuteAsync(new SPDeleteCardSet
             {
                 Id = id
             });
         }
 
-        public Task<WordSetModel> GetAsync(int id)
+        public Task<CardSetModel> GetAsync(int id)
         {
-            return _procedureExecutor.ExecuteWithObjectResponseAsync<WordSetModel>(new SPGetSetById
+            return _procedureExecutor.ExecuteWithObjectResponseAsync<CardSetModel>(new SPGetSetById
             {
                 Id = id
             });
         }
 
-        public Task<ICollection<WordSetModel>> GetAsync()
+        public Task<ICollection<CardSetModel>> GetAsync()
         {
-            return _procedureExecutor.ExecuteWithListResponseAsync<WordSetModel>(new SPGetSets());
+            return _procedureExecutor.ExecuteWithListResponseAsync<CardSetModel>(new SPGetSets());
         }
 
         public Task UpdateAsync(int id, UpdateSetModel model)
         {
             return _procedureExecutor.ExecuteAsync(new SPUpdateSet
             {
-                Id = id
+                Id = id, 
+                Name = model.Name
             });
         }
     }
