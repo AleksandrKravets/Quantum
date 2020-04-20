@@ -10,6 +10,6 @@ namespace Quantum.Application.Services.Contracts
         Task DeleteAsync(int id);
         Task UpdateAsync(int id, UpdateSetModel model);
         Task<CardSetModel> GetAsync(int id);
-        Task<ICollection<CardSetModel>> GetAsync();
+        Task<ICollection<CardSetModel>> GetAllAsync();
     }
 }

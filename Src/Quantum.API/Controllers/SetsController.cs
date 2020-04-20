@@ -4,6 +4,7 @@ using Quantum.API.Infrastructure;
 using Quantum.Application.DataTransferObjects.Sets;
 using Quantum.Application.Services.Contracts;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Quantum.API.Controllers
@@ -17,7 +18,7 @@ namespace Quantum.API.Controllers
         private readonly ISetsSetvice _setsSetvice;
 
         /// <summary>
-        /// Initializes controllers with providers.
+        /// Initializes controller with providers.
         /// </summary>
         /// <param name="setsSetvice">The instance of <see cref="ISetsSetvice"></see>.</param>
         public SetsController(ISetsSetvice setsSetvice)
@@ -72,11 +73,11 @@ namespace Quantum.API.Controllers
         /// Returns card sets list.
         /// </summary>
         /// <returns>The collection of <see cref="CardSetModel"></see>.</returns>
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(List<CardSetModel>), StatusCodes.Status200OK)]
         [HttpGet]
         public async Task<IActionResult> GetSets()
         {
-            var result = await _setsSetvice.GetAsync();
+            var result = await _setsSetvice.GetAllAsync();
             return Ok(result);
         }
 
@@ -85,7 +86,7 @@ namespace Quantum.API.Controllers
         /// </summary>
         /// <param name="id">Card set identifier.</param>
         /// <returns>The instance of <see cref="CardSetModel"></see>.</returns>
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(CardSetModel), StatusCodes.Status200OK)]
         [Route("{id}")]
         [HttpGet]
         public async Task<IActionResult> GetSet(int id)

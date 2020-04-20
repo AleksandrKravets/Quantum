@@ -31,7 +31,7 @@ namespace Quantum.Application.Services.Implementations
             return _setsRepository.GetAsync(id);
         }
 
-        public Task<ICollection<CardSetModel>> GetAsync()
+        public Task<ICollection<CardSetModel>> GetAllAsync()
         {
             return _setsRepository.GetAsync();
         }
