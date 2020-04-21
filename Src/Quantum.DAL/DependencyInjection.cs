@@ -11,6 +11,7 @@ namespace Quantum.DAL
         {
             services.AddTransient<StoredProcedureExecutor>();
             services.AddTransient<ISetsRepository, SetsRepository>();
+            services.AddTransient<ICardsRepository, CardsRepository>();
 
             return services;
         }

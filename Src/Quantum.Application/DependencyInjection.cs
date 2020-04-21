@@ -9,6 +9,7 @@ namespace Quantum.Application
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
             services.AddTransient<ISetsSetvice, SetsService>();
+            services.AddTransient<ICardsService, CardsService>();
 
             return services;
         }

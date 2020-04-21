@@ -35,4 +35,41 @@ namespace Quantum.DAL.StoredProcedures
             [InParameter] public string Name;
         }
     }
+
+    namespace Cards
+    {
+        [ProcedureName("CreateCard")]
+        internal class SPCreateCard : StoredProcedure
+        {
+            [InParameter] public int SetId;
+            [InParameter] public string Word;
+            [InParameter] public string Translation;
+        }
+
+        [ProcedureName("DeleteCard")]
+        internal class SPDeleteCard : StoredProcedure
+        {
+            [InParameter] public int Id;
+        }
+
+        [ProcedureName("UpdateCard")]
+        internal class SPUpdateCard : StoredProcedure
+        {
+            [InParameter] public int Id;
+            [InParameter] public string Word;
+            [InParameter] public string Translation;
+        }
+
+        [ProcedureName("GetCard")]
+        internal class SPGetCard : StoredProcedure
+        {
+            [InParameter] public int Id;
+        }
+
+        [ProcedureName("GetCards")]
+        internal class SPGetCards : StoredProcedure
+        {
+            [InParameter] public int SetId;
+        }
+    }
 }

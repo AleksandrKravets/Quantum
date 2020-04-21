@@ -54,6 +54,22 @@ namespace Quantum.API.Controllers
         }
 
         /// <summary>
+        /// Updates card.
+        /// </summary>
+        /// <param name="id">Card identifier.</param>
+        /// <param name="model">Card model to update.</param>
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Route("{id}")]
+        [HttpPut]
+        [Validation]
+        public async Task<IActionResult> UpdateCard(int id, [FromBody]UpdateCardModel model)
+        {
+            await _cardsService.UpdateAsync(id, model);
+            return Ok();
+        }
+
+        /// <summary>
         /// Returns card.
         /// </summary>
         /// <param name="id">Card identifier.</param>
@@ -79,22 +95,6 @@ namespace Quantum.API.Controllers
         {
             var result = await _cardsService.GetAllAsync(id);
             return Ok(result);
-        }
-
-        /// <summary>
-        /// Updates card.
-        /// </summary>
-        /// <param name="id">Card identifier.</param>
-        /// <param name="model">Card model to update.</param>
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [Route("{id}")]
-        [HttpPut]
-        [Validation]
-        public async Task<IActionResult> UpdateCard(int id, [FromBody]UpdateCardModel model)
-        {
-            await _cardsService.UpdateAsync(id, model);
-            return Ok();
         }
     }
 }
